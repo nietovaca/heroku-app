@@ -61,6 +61,8 @@ app.get('/teacherspet/newstudent',(req, res) => {
 
 //POST New Student Route
 app.post('/teacherspet/', (req, res) => {
+// POSTING all standards to create student page, changing data to number
+  // standard 1A
   if (req.body.oneA10 === 'on') {
     req.body.oneA10 = 10;
   } else if (req.body.oneA9 === 'on') {
@@ -72,6 +74,7 @@ app.post('/teacherspet/', (req, res) => {
     else {
       req.body.oneA6 = 6
     }
+    // Standard 1B
   if  (req.body.oneB10 === 'on') {
     req.body.oneB10 = 10;
   } else if (req.body.oneB9 === 'on') {
@@ -82,6 +85,90 @@ app.post('/teacherspet/', (req, res) => {
     req.body.oneB7 = 7; }
     else {
       req.body.oneB6 = 6
+    }
+    // Standard 1C
+  if  (req.body.oneC10 === 'on') {
+    req.body.oneC10 = 10;
+  } else if (req.body.oneC9 === 'on') {
+    req.body.oneC9 = 9;
+  } else if (req.body.oneC8 === 'on') {
+    req.body.oneC8 = 8;
+  } else if (req.body.oneC7 === 'on'){
+    req.body.oneC7 = 7; }
+    else {
+      req.body.oneC6 = 6
+    }
+      // Standard 1D
+  if  (req.body.oneD10 === 'on') {
+    req.body.oneD10 = 10;
+  } else if (req.body.oneD9 === 'on') {
+    req.body.oneD9 = 9;
+  } else if (req.body.oneD8 === 'on') {
+    req.body.oneD8 = 8;
+  } else if (req.body.oneD7 === 'on'){
+    req.body.oneD7 = 7; }
+    else {
+      req.body.oneD6 = 6
+    }
+// Standard 2
+  if  (req.body.two10 === 'on') {
+    req.body.two10 = 10;
+  } else if (req.body.two9 === 'on') {
+    req.body.two9 = 9;
+  } else if (req.body.two8 === 'on') {
+    req.body.two8 = 8;
+  } else if (req.body.two7 === 'on'){
+    req.body.two7 = 7; }
+    else {
+      req.body.two6 = 6
+    }
+  //Standard 3
+  if  (req.body.three10 === 'on') {
+    req.body.three10 = 10;
+  } else if (req.body.three9 === 'on') {
+    req.body.three9 = 9;
+  } else if (req.body.three8 === 'on') {
+    req.body.three8 = 8;
+  } else if (req.body.three7 === 'on'){
+    req.body.three7 = 7; }
+    else {
+      req.body.three6 = 6
+    }
+  // Standard 4
+  if  (req.body.four10 === 'on') {
+    req.body.four10 = 10;
+  } else if (req.body.four9 === 'on') {
+    req.body.four9 = 9;
+  } else if (req.body.four8 === 'on') {
+    req.body.four8 = 8;
+  } else if (req.body.four7 === 'on'){
+    req.body.four7 = 7; }
+    else {
+      req.body.four6 = 6
+    }
+  // Standard 5
+  if  (req.body.five10 === 'on') {
+    req.body.five10 = 10;
+  } else if (req.body.five9 === 'on') {
+    req.body.five9 = 9;
+  } else if (req.body.five8 === 'on') {
+    req.body.five8 = 8;
+  } else if (req.body.five7 === 'on'){
+    req.body.five7 = 7; }
+    else {
+      req.body.five6 = 6
+    }
+  // Standard 6
+  if  (req.body.six10 === 'on') {
+    req.body.six10 = 10;
+  } else if (req.body.six9 === 'on') {
+    req.body.six9 = 9;
+  } else if (req.body.six8 === 'on') {
+    req.body.six8 = 8;
+  } else if (req.body.six7 === 'on'){
+    req.body.six7 = 7; }
+    else {
+      req.body.six6 = 6
     }
   res.send(req.body);
 })
