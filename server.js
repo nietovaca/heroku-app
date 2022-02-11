@@ -52,12 +52,40 @@ app.get('/' , (req, res) => {
   res.send('escuchando');
 });
 
+//GET New Student Route
 app.get('/teacherspet/newstudent',(req, res) => {
-  res.send('new created')
+  res.render('new.ejs', {
+    tabTitle: 'Add Student'
+  });
 });
 
-
+//POST New Student Route
+app.post('/teacherspet/', (req, res) => {
+  if (req.body.oneA10 === 'on') {
+    req.body.oneA10 = 10;
+  } else if (req.body.oneA9 === 'on') {
+    req.body.oneA9 = 9;
+  } else if (req.body.oneA8 === 'on') {
+    req.body.oneA8 = 8;
+  } else if (req.body.oneA7 === 'on'){
+    req.body.oneA7 = 7; }
+    else {
+      req.body.oneA6 = 6
+    }
+  if  (req.body.oneB10 === 'on') {
+    req.body.oneB10 = 10;
+  } else if (req.body.oneB9 === 'on') {
+    req.body.oneB9 = 9;
+  } else if (req.body.oneB8 === 'on') {
+    req.body.oneB8 = 8;
+  } else if (req.body.oneB7 === 'on'){
+    req.body.oneB7 = 7; }
+    else {
+      req.body.oneB6 = 6
+    }
+  res.send(req.body);
+})
 //___________________
 //Listener
 //___________________
-app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+app.listen(PORT, () => console.log( 'escuchandote', PORT));

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('partials/header.ejs')%>
+  </head>
+  <body>
+    <h1>Add a Student</h1>
+    <p>Prepare for your class discussion: add your students by name and select their current level. </p>
+    <form class="" action="/teacherspet" method="POST">
+      <div class="form-group">
+        <input type="text" class="form-control" name="name" placeholder="Student Name">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="class" placeholder="Class Period">
+      </div>
+<!-- Not sure about this: but there probably needs to be a way to select gradelevel and the delineate standards from there  -->
+<!-- if gradelevel === 9-10 - show these standard options else show these options
+for now: Grade level 11-12 only -->
+      <h3>Speaking & Listening: CCSS.ELA-LITERACY.SL.11-12.1 - 6</h3>
+      <h4>Current Level</h4>
+      <div class="standards">
+        <!-- Standard 1A -->
+        <h5>Standard 1 A:</h5>
+        <p>Come to discussions prepared, having read and researched material under study;
+          explicitly draw on that preparation by referring to evidence from texts and other research on the topic or issue to stimulate a thoughtful,
+          well-reasoned exchange of ideas.</p>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="level6" class="custom-control-input" name="oneA6"><label class="custom-control-label">Level 6</label>
+          <input type="radio" id="level7" class="custom-control-input" name="oneA7"><label class="custom-control-label">Level 7</label>
+          <input type="radio" id="level8" class="custom-control-input" name="oneA8"><label class="custom-control-label">Level 8</label>
+          <input type="radio" id="level9" class="custom-control-input" name="oneA9"><label class="custom-control-label">Level 9</label>
+          <input type="radio" id="level10" class="custom-control-input" name="oneA10"><label class="custom-control-label">Level 10</label>
+        </div>
+        <!-- Standard 1B -->
+        <h5>Standard 1 B:</h5>
+        <p>Work with peers to promote civil, democratic discussions and decision-making, set clear goals and deadlines, and establish individual roles as needed.</p>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="level6" class="custom-control-input" name="oneB6"><label class="custom-control-label">Level 6</label>
+          <input type="radio" id="level7" class="custom-control-input" name="oneB7"><label class="custom-control-label">Level 7</label>
+          <input type="radio" id="level8" class="custom-control-input" name="oneB8"><label class="custom-control-label">Level 8</label>
+          <input type="radio" id="level9" class="custom-control-input" name="oneB9"><label class="custom-control-label">Level 9</label>
+          <input type="radio" id="level10" class="custom-control-input" name="oneB10"><label class="custom-control-label">Level 10</label>
+        </div>
+      </div>
+
+<!-- SUBMIT & ADD NEW BUTTONS -->
+      <input type="submit" class="btn btn-success" value="Create Student">
+    </form>
+    <form action="/teacherspet/new" method="GET">
+      <input type="submit" class="btn btn-success btn-lg btn-block" name="newStudent" value="Add Another Student">
+    </form>
+  </body>
+</html>
