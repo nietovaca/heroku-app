@@ -52,6 +52,11 @@ app.get('/' , (req, res) => {
   res.send('escuchando');
 });
 
+app.get('/teacherspet/newstudent',(req, res) => {
+  res.send('new created')
+});
+
+
 //___________________
 //Listener
 //___________________
