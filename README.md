@@ -6,5 +6,9 @@ Bootstrap for CSS Styling
 NOTES:
 update tabTitles: |<%=tabTitle%>
 
-Taking a break:
-make sure each standard is loaded to HTML, then add if statement for each radio button option. When building schema, each substandard will be number
+Programatic Ideas and Questions :
+Is there a way to make each standard save as a variable and then call on it for other use?
+
+Design Ideas & QUestions:
+Drop down details for each standard - hide the whole thing
+drop down for each radio button: benchmarks/distinguishing features of each level
