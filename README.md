@@ -6,9 +6,13 @@ Bootstrap for CSS Styling
 NOTES:
 update tabTitles: |<%=tabTitle%>
 
+BREAK:
+
+
+
 Programatic Ideas and Questions :
 Is there a way to make each standard save as a variable and then call on it for other use?
 
 Design Ideas & QUestions:
-Drop down details for each standard - hide the whole thing
-drop down for each radio button: benchmarks/distinguishing features of each level
+Drop down details for contribution type
+color change after student participation/when students participate more than once 

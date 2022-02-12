@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('partials/header.ejs')%>
+  </head>
+  <body>
+    <h1>Add Students to your class</h1>
+    <form class="" action="/teacherspet" method="POST">
+      <div class="form-group">
+        <input type="text" class="form-control" name="name" placeholder="Student Name">
+      </div>
+      <div class="form-group">
+        <label for="notes">Notes: </label>
+        <textarea class="form-control" name="notes" rows="3" placeholder="Notes about student progress and goals"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="project" placeholder="Book, Project, or Topic of Discussion">
+      </div>
+<!-- SUBMIT & ADD NEW BUTTONS -->
+      <input type="submit" class="btn btn-success" value="Create Student">
+    </form>
+    <form action="/teacherspet/newstudent" method="GET">
+      <input type="submit" class="btn btn-success btn-lg btn-block" name="newStudent" value="Add Another Student">
+    </form>
+  </body>
+</html>

@@ -6,7 +6,10 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
-require('dotenv').config()
+const Student = require("./models/students.js");
+const bodyParser = require('body-parser')
+require('dotenv').config();
+
 //___________________
 //Port
 //___________________
@@ -52,126 +55,58 @@ app.get('/' , (req, res) => {
   res.send('escuchando');
 });
 
-//GET New Student Route
-app.get('/teacherspet/newstudent',(req, res) => {
-  res.render('new.ejs', {
+//GET New class Route
+// app.get('/teacherspet/newclass',(req, res) => {
+//   res.render('newclass.ejs', {
+//     tabTitle: 'Add Class'
+//   });
+// });
+
+// Render new student/create page
+app.get('/teacherspet/newstudent', (req, res) => {
+  res.render('newstudent.ejs', {
     tabTitle: 'Add Student'
   });
 });
 
+// Render Index/View All Pg.
+app.get('/teacherspet', (req, res) => {
+  Student.find({}, (error, allStudents) => {
+    res.render('index.ejs', {
+      tabTitle: `Teacher's Pet`,
+      students: allStudents
+    });
+  });
+});
+
+
 //POST New Student Route
 app.post('/teacherspet/', (req, res) => {
-// POSTING all standards to create student page, changing data to number
-  // standard 1A
-  if (req.body.oneA10 === 'on') {
-    req.body.oneA10 = 10;
-  } else if (req.body.oneA9 === 'on') {
-    req.body.oneA9 = 9;
-  } else if (req.body.oneA8 === 'on') {
-    req.body.oneA8 = 8;
-  } else if (req.body.oneA7 === 'on'){
-    req.body.oneA7 = 7; }
-    else {
-      req.body.oneA6 = 6
-    }
-    // Standard 1B
-  if  (req.body.oneB10 === 'on') {
-    req.body.oneB10 = 10;
-  } else if (req.body.oneB9 === 'on') {
-    req.body.oneB9 = 9;
-  } else if (req.body.oneB8 === 'on') {
-    req.body.oneB8 = 8;
-  } else if (req.body.oneB7 === 'on'){
-    req.body.oneB7 = 7; }
-    else {
-      req.body.oneB6 = 6
-    }
-    // Standard 1C
-  if  (req.body.oneC10 === 'on') {
-    req.body.oneC10 = 10;
-  } else if (req.body.oneC9 === 'on') {
-    req.body.oneC9 = 9;
-  } else if (req.body.oneC8 === 'on') {
-    req.body.oneC8 = 8;
-  } else if (req.body.oneC7 === 'on'){
-    req.body.oneC7 = 7; }
-    else {
-      req.body.oneC6 = 6
-    }
-      // Standard 1D
-  if  (req.body.oneD10 === 'on') {
-    req.body.oneD10 = 10;
-  } else if (req.body.oneD9 === 'on') {
-    req.body.oneD9 = 9;
-  } else if (req.body.oneD8 === 'on') {
-    req.body.oneD8 = 8;
-  } else if (req.body.oneD7 === 'on'){
-    req.body.oneD7 = 7; }
-    else {
-      req.body.oneD6 = 6
-    }
-// Standard 2
-  if  (req.body.two10 === 'on') {
-    req.body.two10 = 10;
-  } else if (req.body.two9 === 'on') {
-    req.body.two9 = 9;
-  } else if (req.body.two8 === 'on') {
-    req.body.two8 = 8;
-  } else if (req.body.two7 === 'on'){
-    req.body.two7 = 7; }
-    else {
-      req.body.two6 = 6
-    }
-  //Standard 3
-  if  (req.body.three10 === 'on') {
-    req.body.three10 = 10;
-  } else if (req.body.three9 === 'on') {
-    req.body.three9 = 9;
-  } else if (req.body.three8 === 'on') {
-    req.body.three8 = 8;
-  } else if (req.body.three7 === 'on'){
-    req.body.three7 = 7; }
-    else {
-      req.body.three6 = 6
-    }
-  // Standard 4
-  if  (req.body.four10 === 'on') {
-    req.body.four10 = 10;
-  } else if (req.body.four9 === 'on') {
-    req.body.four9 = 9;
-  } else if (req.body.four8 === 'on') {
-    req.body.four8 = 8;
-  } else if (req.body.four7 === 'on'){
-    req.body.four7 = 7; }
-    else {
-      req.body.four6 = 6
-    }
-  // Standard 5
-  if  (req.body.five10 === 'on') {
-    req.body.five10 = 10;
-  } else if (req.body.five9 === 'on') {
-    req.body.five9 = 9;
-  } else if (req.body.five8 === 'on') {
-    req.body.five8 = 8;
-  } else if (req.body.five7 === 'on'){
-    req.body.five7 = 7; }
-    else {
-      req.body.five6 = 6
-    }
-  // Standard 6
-  if  (req.body.six10 === 'on') {
-    req.body.six10 = 10;
-  } else if (req.body.six9 === 'on') {
-    req.body.six9 = 9;
-  } else if (req.body.six8 === 'on') {
-    req.body.six8 = 8;
-  } else if (req.body.six7 === 'on'){
-    req.body.six7 = 7; }
-    else {
-      req.body.six6 = 6
-    }
-  res.send(req.body);
-})
+  Student.create(req.body, (error, createdStudent) => {
+    res.redirect("/teacherspet/newstudent");
+  });
+});
+
+// this should update student on index page when participation is checked
+// app.put('/teacherspet', (req, res) => {
+//   if(req.body.participation === 'on'){
+//     req.body.participation = true;
+//   } else {
+//     req.body.participation = false;
+//   }
+//   Student.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+//     res.redirect("/teacherspet");
+//   })
+// })
+
+// app.post('/teacherspet/', (req, res) => {
+//   Class.create(req.body, (error, createdStudent) => {
+//     res.redirect("/teacherspet")
+//   });
+// });
+
+
+
 //___________________
 //Listener
 //___________________

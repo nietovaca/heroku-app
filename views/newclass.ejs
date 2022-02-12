@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('partials/header.ejs')%>
+  </head>
+  <body>
+    <h1>Create a Class</h1>
+    <p>Create a class to help organize your students and easily access next time. </p>
+    <form class="" action="/teacherspet" method="POST">
+      <div class="form-group">
+        <input type="text" class="form-control" name="class" placeholder="Class Period">
+      </div>
+<!-- SUBMIT & ADD NEW BUTTONS -->
+      <input type="submit" class="btn btn-success" value="Create Class">
+    </form>
+    <form action="/teacherspet/newclass" method="GET">
+      <input type="submit" class="btn btn-success btn-lg btn-block" name="newStudent" value="Add Another Student">
+    </form>
+  </body>
+</html>
