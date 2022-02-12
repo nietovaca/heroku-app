@@ -12,6 +12,7 @@
             <th scope="col">Last Update</th>
             <th scope="col">Student</th>
             <th scope="col">Participation</th>
+            <th scope="col">Notes</th>
           </tr>
         </thead>
         <tbody>
@@ -24,18 +25,17 @@
               students[i].timestamps;
               %>
             </th>
-              <td>
-                <%=students[i].name;%>
-              </td>
-              <td>
-                <%=students[i].class%>
-              </td>
-              <td>
-                <%=students[i].participation%>
-              </td>
+              <td><%=students[i].name;%></td>
+              <td><%=students[i].class%></td>
+              <td><%=students[i].participation%></td>
+              <td><a href="/teacherspet/<%=students[i].id;%>">edit</a></td>
+              <td class="text-sm-left"><%=students[i].notes%></td>
             <%}%>
           </tr>
         </tbody>
   </table>
+  <nav>
+    <button type="button" class="btn btn-warning btn-lg btn-block fixed-bottom"><a href="/teacherspet/newstudent" class="text-dark">Add a Student</a></button>
+  </nav>
   </body>
 </html>

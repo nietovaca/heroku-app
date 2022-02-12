@@ -79,6 +79,14 @@ app.get('/teacherspet', (req, res) => {
   });
 });
 
+app.get('/teacherspet/:id', (req, res) => {
+  Student.findById(req.params.id, (err, foundStudent) => {
+    res.render("show.ejs", {
+      student: foundStudent,
+      tabTitle: "Student View"
+    });
+  });
+});
 
 //POST New Student Route
 app.post('/teacherspet/', (req, res) => {

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('partials/header.ejs')%>
+  </head>
+  <body>
+    <h1> <%=student.name;%> </h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Last Update</th>
+          <th scope="col">Participation</th>
+          <th scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"> </th>
+            <td> <%= student.timestamps; %> </td>
+            <td> <%=student.class%> </td>
+            <td> <%=student.participation%> </td>
+            <td class="text-sm-left"> <%=student.notes%> </td>
+        </tr>
+      </tbody>
+</table>
+  </body>
+</html>
