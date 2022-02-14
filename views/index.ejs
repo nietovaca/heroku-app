@@ -22,13 +22,13 @@
           <tr>
             <th scope="row">
               <%=
-              students[i].timestamps;
+              students[i].updatedAt;
               %>
             </th>
-              <td><%=students[i].name;%></td>
+              <td> <a href="/teacherspet/<%=students[i].id;%>"><%=students[i].name;%></a></td>
               <td><%=students[i].class%></td>
               <td><%=students[i].participation%></td>
-              <td><a href="/teacherspet/<%=students[i].id;%>">edit</a></td>
+              <td><a href="/teacherspet/<%=students[i].id;%>/edit">Edit</a></td>
               <td class="text-sm-left"><%=students[i].notes%></td>
             <%}%>
           </tr>

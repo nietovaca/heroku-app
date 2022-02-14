@@ -1,22 +1,15 @@
+'use strict';
 const mongoose = require('mongoose');
+const mongooseDateFormat = require('mongoose-date-format');
 
 // CHILD
 const studentSchema = new mongoose.Schema({
   name: {type: String, require: true},
   notes: String,
   project: String,
-  participation: {type: Boolean, timestamps: true}
-});
-
-// PARENT
-// const classSchema = new mongoose.Schema({
-//   class: String,
-//   students: {studentSchema}
-// });
-
-// export
-// const classCollection = mongoose.model('Class', classSchema);
-// module.exports = classCollection;
+  participation: {type: Date, default: new Date()}
+},
+  {timestamps: true});
 
 const studentCollection = mongoose.model('Student', studentSchema);
-module.exports = studentCollection; 
+module.exports = studentCollection;

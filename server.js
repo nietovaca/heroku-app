@@ -1,3 +1,4 @@
+'use strict';
 //___________________
 //Dependencies
 //___________________
@@ -7,7 +8,7 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 const Student = require("./models/students.js");
-const bodyParser = require('body-parser')
+const mongooseDateFormat = require('mongoose-date-format');
 require('dotenv').config();
 
 //___________________
@@ -46,6 +47,7 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+// app.use('/classes', classesController);
 
 //___________________
 // Routes
@@ -55,16 +57,17 @@ app.get('/' , (req, res) => {
   res.send('escuchando');
 });
 
-//GET New class Route
-// app.get('/teacherspet/newclass',(req, res) => {
-//   res.render('newclass.ejs', {
-//     tabTitle: 'Add Class'
-//   });
+// app.get('/' , (req, res) => {
+//   res.render('index.ejs');
 // });
+
+
 
 // Render new student/create page
 app.get('/teacherspet/newstudent', (req, res) => {
-  res.render('newstudent.ejs', {
+  res.render(
+    'newstudent.ejs',
+    {
     tabTitle: 'Add Student'
   });
 });
@@ -72,19 +75,36 @@ app.get('/teacherspet/newstudent', (req, res) => {
 // Render Index/View All Pg.
 app.get('/teacherspet', (req, res) => {
   Student.find({}, (error, allStudents) => {
-    res.render('index.ejs', {
+    res.render(
+      'index.ejs',
+      {
       tabTitle: `Teacher's Pet`,
       students: allStudents
     });
   });
 });
 
+// student info Route
 app.get('/teacherspet/:id', (req, res) => {
   Student.findById(req.params.id, (err, foundStudent) => {
-    res.render("show.ejs", {
+    res.render(
+      "show.ejs",
+    {
       student: foundStudent,
       tabTitle: "Student View"
     });
+  });
+});
+
+// Edit route
+app.get('/teacherspet/:id/edit', (req, res) => {
+  Student.findById(req.params.id, (err, foundStudent) => {
+    res.render(
+      'edit.ejs',
+      {
+        student: foundStudent,
+        tabTitle: "Edit Student Info"
+      });
   });
 });
 
@@ -95,17 +115,11 @@ app.post('/teacherspet/', (req, res) => {
   });
 });
 
-// this should update student on index page when participation is checked
-// app.put('/teacherspet', (req, res) => {
-//   if(req.body.participation === 'on'){
-//     req.body.participation = true;
-//   } else {
-//     req.body.participation = false;
-//   }
-//   Student.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-//     res.redirect("/teacherspet");
-//   })
-// })
+app.put('/teacherspet/:id', (req, res) => {
+  Student.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+    res.redirect('/teacherspet');
+  });
+});
 
 // app.post('/teacherspet/', (req, res) => {
 //   Class.create(req.body, (error, createdStudent) => {
@@ -113,6 +127,11 @@ app.post('/teacherspet/', (req, res) => {
 //   });
 // });
 
+app.delete('/teacherspet/:id', (req, res) => {
+  Student.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect('/teacherspet');
+  });
+});
 
 
 //___________________
