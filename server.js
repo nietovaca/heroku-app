@@ -113,7 +113,7 @@ app.get('/teacherspet/:id/edit', (req, res) => {
 //POST New Student Route
 app.post('/teacherspet/', (req, res) => {
   Student.create(req.body, (error, createdStudent) => {
-    res.redirect("/teacherspet/newstudent");
+    res.redirect("/teacherspet");
   });
 });
 
