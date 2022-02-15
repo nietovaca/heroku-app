@@ -7,7 +7,7 @@ const studentSchema = new mongoose.Schema({
   name: {type: String, require: true},
   notes: String,
   project: String,
-  participation: {type: Date, default: new Date()}
+  participation: String
 },
   {timestamps: true});
 

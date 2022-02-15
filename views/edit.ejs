@@ -18,11 +18,13 @@
         <input type="text" class="form-control" name="project" value='<%=student.project%>'>
       </div>
       <div class="form-group">
-        <label for="participation">Participation:</label>
-        <input type="text" name="particpation" value="<%=student.timestamps%>">
-        <input type="text" name="participation" placeholder="<%=student.participation%>">
+        <label class="form-control">Participation:</label>
+        <input type="textarea" class="form-control" name="participation" value="<%=student.participation%>">
       </div>
       <input type="submit" value="Submit Changes">
     </form>
+    <button type="button" name="button">
+      <a href="/teacherspet">Class List</a>
+    </button>
   </body>
 </html>

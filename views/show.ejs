@@ -5,24 +5,27 @@
   </head>
   <body>
     <h1><%=student.name;%></h1>
-    <table class="table table-hover">
+    <table class="table table-hover sortable">
       <thead>
         <tr>
-          <th scope="col">Last Update</th>
-          <th scope="col">Participation</th>
           <th scope="col">Notes</th>
+          <th scope="col">Last Update</th>
+          <th scope="col">Project</th>
+          <th>Participation</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row"> </th>
-            <td> <%= student.timestamps; %> </td>
-            <td> <%=student.participation%> </td>
-            <td class="text-sm-left"> <%=student.notes%> </td>
+            <td><%=student.notes%></td>
+            <td> <%=student.updatedAt;%> </td>
+            <td> <%=student.project; %> </td>
+            <td class="text-sm-left"><%= student.participation %></td>
         </tr>
       </tbody>
 </table>
   <button type="button" class="btn btn-warning" name="button"><a href="/teacherspet/" class="text-dark">Home</a></button>
+  <button type="button" name="button"><a href="/teacherspet/<%=student.id;%>/edit">Edit</a></button>
+
   <form class="" action="/teacherspet/<%=student.id;%>?_method=DELETE" method="POST">
     <input type="submit" value="DELETE">
   </form>

@@ -6,13 +6,14 @@
   <body>
     <h1>Teacher's Pet</h1>
     <h3>Class Discussion & Participation Tracker</h3>
-      <table class="table table-hover">
+      <table class="sortable">
         <thead>
           <tr>
-            <th scope="col">Last Update</th>
             <th scope="col">Student</th>
-            <th scope="col">Participation</th>
             <th scope="col">Notes</th>
+            <th>Participation</th>
+            <th>Action</th>
+            <th scope="col">Last Update</th>
           </tr>
         </thead>
         <tbody>
@@ -20,16 +21,12 @@
           for(let i = 0; i <students.length; i++){
           %>
           <tr>
-            <th scope="row">
-              <%=
-              students[i].updatedAt;
-              %>
-            </th>
-              <td> <a href="/teacherspet/<%=students[i].id;%>"><%=students[i].name;%></a></td>
-              <td><%=students[i].class%></td>
-              <td><%=students[i].participation%></td>
-              <td><a href="/teacherspet/<%=students[i].id;%>/edit">Edit</a></td>
-              <td class="text-sm-left"><%=students[i].notes%></td>
+            <td> <a href="/teacherspet/<%=students[i].id;%>"><%=students[i].name;%></a></td>
+            <td class="text-sm-left"><%=students[i].notes%></td>
+            <td><%=students[i].participation%></td>
+            <td><a href="/teacherspet/<%=students[i].id;%>/edit">Edit</a></td>
+            <td scope="row"><%=students[i].updatedAt;%></td>
+
             <%}%>
           </tr>
         </tbody>
