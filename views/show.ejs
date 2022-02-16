@@ -5,10 +5,11 @@
     <link rel="stylesheet" href="//public/styles/main.css">
   </head>
   <body>
+    <%- include('partials/nav.ejs')%>
     <h1 class="title"><%=student.name;%></h1>
     <table class="table is-fullwidth">
       <thead>
-        <tr class="is-selected">
+        <tr class="is-link">
           <th scope="col">Notes</th>
           <th scope="col">Last Update</th>
           <th scope="col">Project</th>
@@ -27,7 +28,7 @@
 
 <div class="field is-grouped">
     <form action="/teacherspet/classlist" class="control">
-      <input type="submit" class="button is-success" value="Back to Class List">
+      <input type="submit" class="button is-primary" value="Back to Class List">
     </form>
     <form action="/teacherspet/<%=student.id;%>/edit" class="control">
       <input type="submit" class="button is-info" value="Edit">

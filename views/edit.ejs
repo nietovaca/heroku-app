@@ -4,6 +4,7 @@
     <%- include('partials/header.ejs')%>
   </head>
   <body>
+    <%- include('partials/nav.ejs')%>
     <h1 class="title">Edit Student Details</h1>
     <form class="field" action="/teacherspet/<%=student.id%>?_method=PUT" method="POST">
       <div class="field">

@@ -3,9 +3,8 @@
   <head>
     <%- include('partials/header.ejs')%>
   </head>
-  <body class="">
-    <h1 class="title">Teacher's Pet</h1>
-    <h3>Class Discussion & Participation Tracker</h3>
+  <body>
+    <%- include('partials/nav.ejs')%>
     <div class="table-container">
       <table class="table is-hoverable is-fullwidth">
         <thead>
@@ -38,7 +37,7 @@
     </div>
   <span >
     <form class="field" action="/teacherspet/newstudent">
-      <input type="submit" class="button is-responsive is-primary" value="Add a Student">
+      <input type="submit" class="button is-responsive is-link is-fullwidth" value="Add a Student">
     </form>
   </span>
   </body>
