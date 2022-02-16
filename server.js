@@ -59,11 +59,12 @@ app.get('/' , (req, res) => {
   res.send('escuchando');
 });
 
-// app.get('/' , (req, res) => {
-//   res.render('index.ejs');
-// });
-
-
+app.get('/teacherspet' , (req, res) => {
+  res.render('teacherspet.ejs',
+{
+  tabTitle: `Teacher's Pet`
+});
+});
 
 // Render new student/create page
 app.get('/teacherspet/newstudent', (req, res) => {
@@ -75,7 +76,7 @@ app.get('/teacherspet/newstudent', (req, res) => {
 });
 
 // Render Index/View All Pg.
-app.get('/teacherspet', (req, res) => {
+app.get('/teacherspet/classlist', (req, res) => {
   Student.find({}, (error, allStudents) => {
     res.render(
       'index.ejs',
@@ -113,13 +114,13 @@ app.get('/teacherspet/:id/edit', (req, res) => {
 //POST New Student Route
 app.post('/teacherspet/', (req, res) => {
   Student.create(req.body, (error, createdStudent) => {
-    res.redirect("/teacherspet");
+    res.redirect("/teacherspet/classlist");
   });
 });
 
 app.put('/teacherspet/:id', (req, res) => {
   Student.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-    res.redirect('/teacherspet');
+    res.redirect('/teacherspet/classlist');
   });
 });
 
@@ -131,7 +132,7 @@ app.put('/teacherspet/:id', (req, res) => {
 
 app.delete('/teacherspet/:id', (req, res) => {
   Student.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect('/teacherspet');
+    res.redirect('/teacherspet/classlist');
   });
 });
 

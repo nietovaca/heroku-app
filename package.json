@@ -7,9 +7,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+    "css-build": "node-sass --omit-source-map-url public/styles/main.scss public/styles/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nietovaca/heroku-app.git"
@@ -29,5 +30,9 @@
     "mongoose": "^6.2.1",
     "mongoose-date-format": "^1.2.0",
     "table-sort-js": "^1.6.8"
+  },
+  "devDependencies": {
+    "bulma": "^0.9.3",
+    "node-sass": "^7.0.1"
   }
 }

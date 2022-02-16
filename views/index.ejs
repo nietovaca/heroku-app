@@ -3,10 +3,11 @@
   <head>
     <%- include('partials/header.ejs')%>
   </head>
-  <body>
-    <h1>Teacher's Pet</h1>
+  <body class="">
+    <h1 class="title">Teacher's Pet</h1>
     <h3>Class Discussion & Participation Tracker</h3>
-      <table class="sortable">
+    <div class="table-container">
+      <table class="table is-hoverable is-fullwidth">
         <thead>
           <tr>
             <th scope="col">Student</th>
@@ -21,19 +22,23 @@
           for(let i = 0; i <students.length; i++){
           %>
           <tr>
-            <td> <a href="/teacherspet/<%=students[i].id;%>"><%=students[i].name;%></a></td>
+            <td> <a class="" href="/teacherspet/<%=students[i].id;%>"><%=students[i].name;%></a></td>
             <td class="text-sm-left"><%=students[i].notes%></td>
             <td><%=students[i].participation%></td>
-            <td><a href="/teacherspet/<%=students[i].id;%>/edit">Edit</a></td>
+            <td class="field">
+              <form action="/teacherspet/<%=students[i].id;%>/edit" class="control">
+                <input type="submit" class="button is-warning is-responsive is-small" value="Edit">
+              </form>
+            </td>
             <td scope="row"><%=students[i].updatedAt;%></td>
-
             <%}%>
           </tr>
         </tbody>
-  </table>
-  <nav>
-    <button type="button" class="btn btn-warning btn-lg btn-block fixed-bottom"><a href="/teacherspet/newstudent" class="text-dark">Add a Student</a></button>
-  </nav>
+      </table>
+    </div>
+  <span >
+    <button type="button" class="button is-responsive is-link is-outlined"><a href="/teacherspet/newstudent" class="">Add a Student</a></button>
+  </span>
   </body>
   <%- include('partials/footer.ejs')%>
 </html>

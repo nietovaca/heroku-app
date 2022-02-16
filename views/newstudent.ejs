@@ -4,24 +4,45 @@
     <%- include('partials/header.ejs')%>
   </head>
   <body>
-    <h1>Add Students to your class</h1>
+    <h1 class="title">Add Students to your class</h1>
     <form class="" action="/teacherspet" method="POST">
-      <div class="form-group">
-        <input type="text" class="form-control" name="name" placeholder="Student Name">
+      <div class="field">
+        <label class="label" for="name">Student's Name:</label>
+        <div class="control">
+          <input type="text" class="input" name="name" placeholder="Name">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="notes">Notes: </label>
-        <input type="textarea" class="form-control" name="notes" rows="3" placeholder="Notes about student progress and goals"></input>
+
+
+
+      <div class="field">
+        <label for="project" class="label">Project, Book, or Topic</label>
+        <div class="control">
+          <input type="text" class="input" name="project" placeholder="Book, Project, or Topic of Discussion">
+        </div>
       </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="project" placeholder="Book, Project, or Topic of Discussion">
+      <div class="field">
+        <label for="participation" class="label">Participation</label>
+        <div class="control">
+          <input type="text" class="input" name="participation" placeholder="Latest participation">
+        </div>
       </div>
-      <div class="form-group">
-        <input type="textarea" class="form-control" name="participation" placeholder="Latest participation">
+      <div class="field">
+        <label for="notes" class="label">Notes: </label>
+        <div class="control">
+          <input type="textarea" class="textarea" name="notes" placeholder="Notes about student progress and goals"></input>
+        </div>
       </div>
 <!-- SUBMIT & ADD NEW BUTTONS -->
-      <input type="submit" class="btn btn-success" value="Create Student">
+      <div class="field is-grouped">
+        <div class="control">
+          <input type="submit" class="button is-small is-responsive is-info is-responsive" value="Create Student">
+        </div>
+        <div class="control">
+          <button type="button" name="button" class="button is-small is-warning is-responsive" ><a href="/teacherspet/classlist">Back to Class List</a></button>
+        </div>
+      </div>
     </form>
-    <button type="button" name="button"><a href="/teacherspet">Home</a></button>
   </body>
+  <%- include('partials/footer.ejs')%>
 </html>

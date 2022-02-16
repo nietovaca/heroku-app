@@ -2,12 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <%- include('partials/header.ejs')%>
+    <link rel="stylesheet" href="//public/styles/main.css">
   </head>
   <body>
-    <h1><%=student.name;%></h1>
-    <table class="table table-hover sortable">
+    <h1 class="title"><%=student.name;%></h1>
+    <table class="table is-fullwidth">
       <thead>
-        <tr>
+        <tr class="is-selected">
           <th scope="col">Notes</th>
           <th scope="col">Last Update</th>
           <th scope="col">Project</th>
@@ -23,11 +24,22 @@
         </tr>
       </tbody>
 </table>
-  <button type="button" class="btn btn-warning" name="button"><a href="/teacherspet/" class="text-dark">Back to Class List</a></button>
-  <button type="button" name="button"><a href="/teacherspet/<%=student.id;%>/edit">Edit</a></button>
 
-  <form class="" action="/teacherspet/<%=student.id;%>?_method=DELETE" method="POST">
-    <input type="submit" value="DELETE">
-  </form>
+<div class="field is-grouped">
+    <form action="/teacherspet/classlist" class="control">
+      <input type="submit" class="button is-success" value="Back to Class List">
+    </form>
+    <form action="/teacherspet/<%=student.id;%>/edit" class="control">
+      <input type="submit" class="button is-info" value="Edit">
+    </form>
+    <form action="/teacherspet/<%=student.id;%>?_method=DELETE" method="POST" class="control">
+      <input type="submit" class="button is-danger" value="Delete">
+    </form>
+</div>
+
+
+
+
   </body>
+  <%- include('partials/footer.ejs')%>
 </html>
