@@ -37,7 +37,9 @@
       </table>
     </div>
   <span >
-    <button type="button" class="button is-responsive is-link is-outlined"><a href="/teacherspet/newstudent" class="">Add a Student</a></button>
+    <form class="field" action="/teacherspet/newstudent">
+      <input type="submit" class="button is-responsive is-primary" value="Add a Student">
+    </form>
   </span>
   </body>
   <%- include('partials/footer.ejs')%>
