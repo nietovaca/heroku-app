@@ -11828,3 +11828,13 @@ src: url("/styles/fontello-f3a39a72/font/fontello.ttf");
 #icon {
   font-family: Icons;
 }
+
+#title {
+font-family: 'Oooh Baby', cursive;
+color: #B8D816;
+font-size: 5em;
+}
+#subtitle {
+/* color: hsl(171, 100%, 41%); */
+color: hsl(217, 71%, 53%);
+}
