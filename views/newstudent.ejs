@@ -37,13 +37,13 @@
 <!-- SUBMIT & ADD NEW BUTTONS -->
       <div class="field is-grouped">
         <div class="control">
-          <input type="submit" class="button is-small is-responsive is-info is-responsive" value="Create Student">
-        </div>
-        <div class="control">
-          <button type="button" name="button" class="button is-small is-warning is-responsive" ><a href="/teacherspet/classlist">Back to Class List</a></button>
-        </div>
-      </div>
+          <input type="submit" class="button is-link is-responsive is-responsive" value="Create Student">
     </form>
+        </div>
+        <form class="control" action="/teacherspet/classlist">
+          <input type="submit" class="button is-primary is-responsive" value="Back to Class List">
+        </form>
+      </div>
   </body>
   <%- include('partials/footer.ejs')%>
 </html>
