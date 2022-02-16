@@ -1,11 +1,13 @@
 .has-bg-img {
-    background: url("/hero.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/hero.jpg");
     background-position: center center;
+    /* opacity: rgba(0, 0, 0, 0.5); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-color: black;
   }
+
 
 /*! bulma.io v0.9.3 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
@@ -11818,3 +11820,11 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
 }
 /*# sourceMappingURL=bulma.css.map */
+@font-face {
+font-family: "Icons";
+src: url("/styles/fontello-f3a39a72/font/fontello.ttf");
+}
+
+#icon {
+  font-family: Icons;
+}
