@@ -6,7 +6,7 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const app = express ();
+// const app = express ();
 const db = mongoose.connection;
 const Student = require("./models/students.js");
 const mongooseDateFormat = require('mongoose-date-format');
@@ -17,8 +17,9 @@ require('dotenv').config();
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT || 3003;
-
+const PORT = process.env.PORT || '8080';
+app = express();
+app.set("port", PORT);
 //___________________
 //Database
 //___________________

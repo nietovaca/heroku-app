@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('../partials/header.ejs')%>
+  </head>
+  <body>
+    <h1>Create a New Class</h1>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes">Classes Index</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <form action="/classes" method="POST">
+          <input type="text" name="name">
+        </form>
+    </main>
+  </body>
+</html>

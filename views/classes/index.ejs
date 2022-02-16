@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('../partials/header.ejs')%>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes/new">Create a New Class</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>List of Classes</h1>
+      <ul>
+        <% for(let i = 0; i < classes.length; i++){%>
+          <li>
+            <a href="/classes/<%=classes[i]._id%>"> <%=classes[i].name%> </a>
+          </li>
+        <%}%>
+      </ul>
+    </main>
+  </body>
+</html>
