@@ -29,10 +29,8 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.2.1",
     "mongoose-date-format": "^1.2.0",
-    "table-sort-js": "^1.6.8"
   },
   "devDependencies": {
     "bulma": "^0.9.3",
-    "node-sass": "^7.0.1"
   }
 }
