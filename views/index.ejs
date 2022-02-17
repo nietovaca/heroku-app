@@ -21,11 +21,11 @@
           for(let i = 0; i <students.length; i++){
           %>
           <tr>
-            <td> <a class="" href="/teacherspet/<%=students[i].id;%>"><%=students[i].name;%></a></td>
+            <td> <a class="" href="/<%=students[i].id;%>"><%=students[i].name;%></a></td>
             <td class="text-sm-left"><%=students[i].notes%></td>
             <td><%=students[i].participation%></td>
             <td class="field">
-              <form action="/teacherspet/<%=students[i].id;%>/edit" class="control">
+              <form action="/<%=students[i].id;%>/edit" class="control">
                 <input type="submit" class="button is-warning is-responsive is-small" value="Edit">
               </form>
             </td>
@@ -36,7 +36,7 @@
       </table>
     </div>
   <span >
-    <form class="field" action="/teacherspet/newstudent">
+    <form class="field" action="/newstudent">
       <input type="submit" class="button is-responsive is-link is-fullwidth" value="Add a Student">
     </form>
   </span>
