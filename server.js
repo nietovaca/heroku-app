@@ -82,7 +82,7 @@ app.get('/classlist', (req, res) => {
       'index.ejs',
       {
       tabTitle: `Teacher's Pet`,
-      students: allStudents
+      students: allStudents,
     });
   });
 });

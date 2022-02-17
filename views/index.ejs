@@ -2,11 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <%- include('partials/header.ejs')%>
+    <script src="sorttable.js"></script>
   </head>
   <body>
     <%- include('partials/nav.ejs')%>
     <div class="table-container ml-4">
-      <table class="table is-hoverable is-fullwidth">
+      <table class="table is-hoverable is-fullwidth sortable">
         <thead>
           <tr>
             <th scope="col">Student</th>
@@ -29,7 +30,7 @@
                 <input type="submit" class="button is-warning is-responsive is-small has-text-link-dark" value="Edit">
               </form>
             </td>
-            <td scope="row"><%=students[i].updatedAt;%></td>
+            <td scope="row"><%=students[i].updatedAt.toDateString();%></td>
             <%}%>
           </tr>
         </tbody>
