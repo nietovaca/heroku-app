@@ -7,9 +7,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url public/styles/main.scss public/styles/main.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
   },
   "repository": {
     "type": "git",
