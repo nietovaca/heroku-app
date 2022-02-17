@@ -6,7 +6,7 @@
   </head>
   <body>
     <%- include('partials/nav.ejs')%>
-    <h1 class="title ml-4"><%=student.name;%></h1>
+    <h1 class="title mx-4"><%=student.name;%></h1>
     <table class="table is-fullwidth">
       <thead>
         <tr class="is-selected">
@@ -19,14 +19,14 @@
       <tbody>
         <tr>
             <td><%=student.notes%></td>
-            <td> <%=student.updatedAt;%> </td>
+            <td> <%=student.updatedAt.toDateString();%> </td>
             <td> <%=student.project; %> </td>
             <td class="text-sm-left"><%= student.participation %></td>
         </tr>
       </tbody>
 </table>
 
-<div class="field is-grouped ml-4">
+<div class="field is-grouped mx-4">
     <form action="/classlist" class="control">
       <input type="submit" class="button is-primary" value="Back to Class List">
     </form>

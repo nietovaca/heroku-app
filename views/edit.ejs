@@ -5,30 +5,30 @@
   </head>
   <body>
     <%- include('partials/nav.ejs')%>
-    <h1 class="title  ml-4">Edit Student Details</h1>
+    <h1 class="title  mx-4">Edit Student Details</h1>
     <form class="field" action="/<%=student.id%>?_method=PUT" method="POST">
-      <div class="field ml-4">
+      <div class="field mx-4">
         <label class="label" for="name">Student Name:</label>
         <div class="control">
           <input type="text" class="input" name="name" value="<%=student.name%>">
         </div>
       </div>
 
-      <div class="field ml-4">
+      <div class="field mx-4">
         <label for="notes">Notes: </label>
         <div class="control">
           <input type="textarea" class="textarea" name="notes" rows="3" value='<%=student.notes%>'></input>
         </div>
       </div>
 
-      <div class="field ml-4">
+      <div class="field mx-4">
         <label for="project" class="label">Project:</label>
         <div class="control">
           <input type="text" class="input" name="project" value='<%=student.project%>'>
         </div>
       </div>
 
-      <div class="field ml-4">
+      <div class="field mx-4">
         <label class="label">Participation:</label>
         <div class="control">
           <input type="textarea" class="textarea" name="participation" value="<%=student.participation%>">
@@ -37,7 +37,7 @@
       <input class="input button is-small is-fullwidth is-responsive is-link"type="submit" value="Submit Changes">
     </form>
 
-<div class="field is-grouped ml-4">
+<div class="field is-grouped mx-4">
   <div class="control">
     <form class="field" action="/classlist">
       <input type="submit" class="button is-primary is-responsive" value="Back to Class List">
