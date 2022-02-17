@@ -55,11 +55,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('escuchando');
-});
+// app.get('/' , (req, res) => {
+//   res.send('escuchando');
+// });
 
-app.get('/teacherspet' , (req, res) => {
+app.get('/' , (req, res) => {
   res.render('teacherspet.ejs',
 {
   tabTitle: `Teacher's Pet`
@@ -67,7 +67,7 @@ app.get('/teacherspet' , (req, res) => {
 });
 
 // Render new student/create page
-app.get('/teacherspet/newstudent', (req, res) => {
+app.get('/newstudent', (req, res) => {
   res.render(
     'newstudent.ejs',
     {
@@ -76,7 +76,7 @@ app.get('/teacherspet/newstudent', (req, res) => {
 });
 
 // Render Index/View All Pg.
-app.get('/teacherspet/classlist', (req, res) => {
+app.get('/classlist', (req, res) => {
   Student.find({}, (error, allStudents) => {
     res.render(
       'index.ejs',
@@ -88,7 +88,7 @@ app.get('/teacherspet/classlist', (req, res) => {
 });
 
 // student info Route
-app.get('/teacherspet/:id', (req, res) => {
+app.get('/:id', (req, res) => {
   Student.findById(req.params.id, (err, foundStudent) => {
     res.render(
       "show.ejs",
@@ -100,7 +100,7 @@ app.get('/teacherspet/:id', (req, res) => {
 });
 
 // Edit route
-app.get('/teacherspet/:id/edit', (req, res) => {
+app.get('/:id/edit', (req, res) => {
   Student.findById(req.params.id, (err, foundStudent) => {
     res.render(
       'edit.ejs',
@@ -112,13 +112,13 @@ app.get('/teacherspet/:id/edit', (req, res) => {
 });
 
 //POST New Student Route
-app.post('/teacherspet/', (req, res) => {
+app.post('/', (req, res) => {
   Student.create(req.body, (error, createdStudent) => {
     res.redirect("/teacherspet/classlist");
   });
 });
 
-app.put('/teacherspet/:id', (req, res) => {
+app.put('/:id', (req, res) => {
   Student.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
     res.redirect('/teacherspet/classlist');
   });
@@ -130,7 +130,7 @@ app.put('/teacherspet/:id', (req, res) => {
 //   });
 // });
 
-app.delete('/teacherspet/:id', (req, res) => {
+app.delete('/:id', (req, res) => {
   Student.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect('/teacherspet/classlist');
   });
