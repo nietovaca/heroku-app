@@ -6,8 +6,7 @@
   },
   "description": "",
   "main": "server.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nietovaca/heroku-app.git"
