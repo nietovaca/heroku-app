@@ -5,6 +5,7 @@
   </head>
   <body>
     <%- include('partials/nav.ejs')%>
+    <div class="ml-4">
     <h1 class="title">Add Students to Your Class</h1>
     <form class="" action="/" method="POST">
       <div class="field">
@@ -13,8 +14,6 @@
           <input type="text" class="input" name="name" placeholder="Name">
         </div>
       </div>
-
-
 
       <div class="field">
         <label for="project" class="label">Project, Book, or Topic</label>
@@ -44,6 +43,7 @@
           <input type="submit" class="button is-primary is-responsive" value="Back to Class List">
         </form>
       </div>
+    </div>
   </body>
   <%- include('partials/footer.ejs')%>
 </html>

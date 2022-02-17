@@ -114,13 +114,13 @@ app.get('/:id/edit', (req, res) => {
 //POST New Student Route
 app.post('/', (req, res) => {
   Student.create(req.body, (error, createdStudent) => {
-    res.redirect("/teacherspet/classlist");
+    res.redirect("/classlist");
   });
 });
 
 app.put('/:id', (req, res) => {
   Student.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-    res.redirect('/teacherspet/classlist');
+    res.redirect('/classlist');
   });
 });
 
@@ -132,7 +132,7 @@ app.put('/:id', (req, res) => {
 
 app.delete('/:id', (req, res) => {
   Student.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect('/teacherspet/classlist');
+    res.redirect('/classlist');
   });
 });
 

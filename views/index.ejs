@@ -5,7 +5,7 @@
   </head>
   <body>
     <%- include('partials/nav.ejs')%>
-    <div class="table-container">
+    <div class="table-container ml-4">
       <table class="table is-hoverable is-fullwidth">
         <thead>
           <tr>
@@ -21,12 +21,12 @@
           for(let i = 0; i <students.length; i++){
           %>
           <tr>
-            <td> <a class="" href="/<%=students[i].id;%>"><%=students[i].name;%></a></td>
+            <td> <a class="has-text-link-dark" href="/<%=students[i].id;%>"><%=students[i].name;%></a></td>
             <td class="text-sm-left"><%=students[i].notes%></td>
             <td><%=students[i].participation%></td>
             <td class="field">
               <form action="/<%=students[i].id;%>/edit" class="control">
-                <input type="submit" class="button is-warning is-responsive is-small" value="Edit">
+                <input type="submit" class="button is-warning is-responsive is-small has-text-link-dark" value="Edit">
               </form>
             </td>
             <td scope="row"><%=students[i].updatedAt;%></td>

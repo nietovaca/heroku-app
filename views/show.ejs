@@ -6,7 +6,7 @@
   </head>
   <body>
     <%- include('partials/nav.ejs')%>
-    <h1 class="title"><%=student.name;%></h1>
+    <h1 class="title ml-4"><%=student.name;%></h1>
     <table class="table is-fullwidth">
       <thead>
         <tr class="is-selected">
@@ -26,7 +26,7 @@
       </tbody>
 </table>
 
-<div class="field is-grouped">
+<div class="field is-grouped ml-4">
     <form action="/classlist" class="control">
       <input type="submit" class="button is-primary" value="Back to Class List">
     </form>
