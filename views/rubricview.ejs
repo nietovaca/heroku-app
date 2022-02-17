@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('partials/header.ejs')%>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs')%>
+      <p class="title mx-4 mt-4">Choose which rubric you'd like to view:</p>
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-warning">
+            <p class="title">Listening Rubric</p>
+            <p class="subtitle">Adapted from the <a class="has-text-link" href="http://www.corestandards.org/ELA-Literacy/SL/11-12/" target="_blank">Common Core</a> & <a class="has-text-link" href="https://cdn.summitlearning.org/assets/marketing/Cognitive-Skills-Document-Suite.pdf" target="_blank">Summit Learning Academy</a></p>
+            <div class="content">
+              <p>Demonstrating active listening and openness to diverse perspectives.
+                Using roles and norms to support collegial discussions and completion of group work
+              </p>
+              <form class="field" action="/listening">
+                <input type="submit" class="button is-link"value="Listening Rubric in Full">
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-warning">
+            <p class="title">Speaking Rubric</p>
+            <p class="subtitle">Adapted from the <a class="has-text-link" href="http://www.corestandards.org/ELA-Literacy/SL/11-12/" target="_blank">Common Core</a> & <a  class="has-text-link" href="https://cdn.summitlearning.org/assets/marketing/Cognitive-Skills-Document-Suite.pdf" target="_blank">Summit Learning Academy</a></p>
+            <div class="content">
+              <p>Contributing to a discussion or task with clear, relevant, and substantive content, prepared with appropriate evidence and details.</p>
+            </div>
+            <form class="field" action="/speaking">
+              <input type="submit" class="button is-link"value="Speaking Rubric in Full">
+            </form>
+          </div>
+          </article>
+        </div>
+  </body>
+  <%- include('partials/footer.ejs')%>
+</html>

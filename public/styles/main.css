@@ -5227,13 +5227,3 @@ a.tag:hover {
   padding: 0.25rem 0.5rem;
   text-align: center;
   vertical-align: top; }
-
-.hero {
-    /* background: url("https://imgur.com/a/ZZBriQ9");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: black; */
-    border: solid black;
-  }

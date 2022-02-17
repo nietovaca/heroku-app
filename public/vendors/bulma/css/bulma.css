@@ -11838,3 +11838,18 @@ font-size: 5em;
 /* color: hsl(171, 100%, 41%); */
 color: hsl(217, 71%, 53%);
 }
+
+#navItem {
+padding-top: 10px;
+color: #B8D816;
+}
+
+#speak{
+  background-image: url("/speakingRubric.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: black;
+
+}

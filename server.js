@@ -59,6 +59,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //   res.send('escuchando');
 // });
 
+//Render main page
 app.get('/' , (req, res) => {
   res.render('teacherspet.ejs',
 {
@@ -87,6 +88,34 @@ app.get('/classlist', (req, res) => {
   });
 });
 
+//render rubric details
+app.get('/rubric' , (req, res) => {
+  res.render('rubricview.ejs',
+{
+  tabTitle: `View Our Rubrics`
+});
+});
+
+app.get('/speaking' , (req, res) => {
+  res.render('speaking.ejs',
+{
+  tabTitle: `Speaking Rubric`
+});
+});
+
+app.get('/listening' , (req, res) => {
+  res.render('listening.ejs',
+{
+  tabTitle: `Listening Rubric`
+});
+});
+
+app.get('/about', (req, res) => {
+  res.render('about.ejs', {
+    tabTitle: `About Teacher's Pet`
+  })
+})
+
 // student info Route
 app.get('/:id', (req, res) => {
   Student.findById(req.params.id, (err, foundStudent) => {
@@ -98,6 +127,7 @@ app.get('/:id', (req, res) => {
     });
   });
 });
+
 
 // Edit route
 app.get('/:id/edit', (req, res) => {
@@ -123,12 +153,6 @@ app.put('/:id', (req, res) => {
     res.redirect('/classlist');
   });
 });
-
-// app.post('/teacherspet/', (req, res) => {
-//   Class.create(req.body, (error, createdStudent) => {
-//     res.redirect("/teacherspet")
-//   });
-// });
 
 app.delete('/:id', (req, res) => {
   Student.findByIdAndRemove(req.params.id, (err, data) => {
