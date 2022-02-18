@@ -9,6 +9,7 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 const Student = require("./models/students.js");
+const User = require("./models/user.js");
 const mongooseDateFormat = require('mongoose-date-format');
 require('dotenv').config();
 
@@ -110,6 +111,12 @@ app.get('/listening' , (req, res) => {
 });
 });
 
+app.get('/thankyou', (req, res) => {
+  res.render('aboutAfter.ejs', {
+    tabTitle: 'Thank you!'
+  })
+})
+
 app.get('/about', (req, res) => {
   res.render('about.ejs', {
     tabTitle: `About Teacher's Pet`
@@ -145,6 +152,13 @@ app.get('/:id/edit', (req, res) => {
 app.post('/', (req, res) => {
   Student.create(req.body, (error, createdStudent) => {
     res.redirect("/classlist");
+  });
+});
+
+//Post route for form on about page
+app.post('/about', (req, res) => {
+  User.create(req.body, (error, createdUser) => {
+    res.redirect("/thankyou");
   });
 });
 
