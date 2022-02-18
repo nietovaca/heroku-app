@@ -5,14 +5,17 @@
   </head>
   <body>
     <%- include('partials/nav.ejs')%>
-    <div class="title">
+    <div class="title mx-4">
       Choose which rubric you'd like to view:
     </div>
-    <div class="content">
+    <div class="content mx-4">
       <figure class="image is-16by9">
         <img src="/speakingRubric.png">
       </figure>
     </div>
+    <form class="field" action="/rubric">
+      <input type="submit" class="button is-link"value="Back">
+    </form>
   </body>
   <%- include('partials/footer.ejs')%>
 </html>
